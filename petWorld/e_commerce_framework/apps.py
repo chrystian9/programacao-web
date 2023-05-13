@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class PetworldappConfig(AppConfig):
+class ECommerceFrameworkConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'petWorldApp'
+    name = 'e_commerce_framework'
