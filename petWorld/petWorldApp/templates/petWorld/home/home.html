@@ -3,7 +3,9 @@
     <head>
         <title>Pet World</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="static/petWorld/home/home.css">
+        {% load static %}
+        
+        <link rel="stylesheet" href="{% static 'petWorld/home/home.css' %}">
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Itim'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,7 +14,7 @@
         <nav class="horizontal-menu">
             <div class="logo">
                 <a href="#">
-                    <img src="static/petWorld/figures/logo.png" alt="Logo" width="120" height="96" class="d-inline-block align-text-top">
+                    <img src="{% static 'petWorld/figures/logo.png' %}" alt="Logo" width="120" height="96" class="d-inline-block align-text-top">
                 </a>
             </div>
             <div class="navbar-options">
@@ -61,11 +63,11 @@
             </div>
             <div class="figures">
                 <div class="figure-top">
-                    <img src="static/petWorld/figures/figure-1-cute_shiba_inu.png" alt="Figura de um cachorro fofinho sentado" 
+                    <img src="{% static 'petWorld/figures/figure-1-cute_shiba_inu.png' %}" alt="Figura de um cachorro fofinho sentado" 
                         width="300" height="300" class="d-inline-block align-text-top">
                 </div>
                 <div class="figure-down">
-                    <img src="static/petWorld/figures/figure-2-cute_shiba_inu.png" alt="Figura de um cachorro fofinho deitado" 
+                    <img src="{% static 'petWorld/figures/figure-2-cute_shiba_inu.png' %}" alt="Figura de um cachorro fofinho deitado" 
                         width="300" height="300" class="d-inline-block align-text-top">
                 </div>
             </div>
@@ -84,7 +86,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
                         </div>
                         <div class="info-body-figure">
-                            <img src="static/petWorld/figures/figure-5-gatohi.png" alt="Figura de um cachorro fofinho fazendo continencia" 
+                            <img src="{% static 'petWorld/figures/figure-5-gatohi.png' %}" alt="Figura de um cachorro fofinho fazendo continencia" 
                                 width="217" height="228" class="d-inline-block align-text-top">
                         </div>
                     </div>
@@ -98,7 +100,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
                         </div>
                         <div class="info-body-figure">
-                            <img src="static/petWorld/figures/figure-4-gatolove.png" alt="Figura de um cachorro fofinho mandando corações" 
+                            <img src="{% static 'petWorld/figures/figure-4-gatolove.png' %}" alt="Figura de um cachorro fofinho mandando corações" 
                                 width="231" height="230" class="d-inline-block align-text-top">
                         </div>
                     </div>
@@ -112,7 +114,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
                         </div>
                         <div class="info-body-figure">
-                            <img src="static/petWorld/figures/figure-3-gatomew.png" alt="Figura de um cachorro fofinho miando" 
+                            <img src="{% static 'petWorld/figures/figure-3-gatomew.png' %}" alt="Figura de um cachorro fofinho miando" 
                                 width="199.67" height="230" class="d-inline-block align-text-top">
                         </div>
                     </div>
@@ -123,7 +125,7 @@
             <div class="footer-menu-infos">
                 <div class="logo">
                     <a href="#">
-                        <img src="static/petWorld/figures/logo_2.png" alt="Logo" width="252" height="201.09" class="d-inline-block align-text-top">
+                        <img src="{% static 'petWorld/figures/logo_2.png' %}" alt="Logo" width="252" height="201.09" class="d-inline-block align-text-top">
                     </a>
                     <span>Tudo para seu pet</span>
                 </div>
