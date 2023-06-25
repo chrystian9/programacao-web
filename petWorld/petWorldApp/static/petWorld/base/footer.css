@@ -1,0 +1,56 @@
+.footer-menu {
+    height: 568px;
+    background: #FFFFFF;
+    border-top: 1px solid #6C6C6C;
+    display: grid;
+    align-content: space-between;
+}
+
+.footer-menu .footer-menu-infos {
+    display: flex;
+    padding: 88px 51px 92px 74px;
+    justify-content: space-between;
+}
+
+.footer-menu .footer-menu-infos .logo {
+    display: grid;
+    color: #9F9F9F;
+    text-align: center;
+}
+
+.footer-menu .footer-menu-infos .footer-menu-info {
+    display: grid;
+    gap: 42px;
+    align-content: start;
+    padding-top: 9px;
+}
+
+.footer-menu .footer-menu-infos .info-title {
+    font-size: 28px;
+    line-height: 34px;
+
+    color: #535353;
+}
+
+.footer-menu .footer-menu-infos .infos {
+    font-size: 28px;
+    line-height: 34px;
+    gap: 25px;
+    display: grid;
+    color: #9F9F9F;
+}
+
+.footer-menu .footer-menu-license {
+    height: 137px;
+    background: #EBEBEB;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #888888;
+}
