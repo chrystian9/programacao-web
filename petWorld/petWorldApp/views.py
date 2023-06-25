@@ -11,3 +11,7 @@ def home(request):
 def produtos(request):
     context = {"latest_question_list": ""}
     return render(request, "petWorld/produtos/produtos.html", context)
+
+def apresentacao(request):
+    context = {"latest_question_list": ""}
+    return render(request, "petWorld/home/apresentacao.html", context)

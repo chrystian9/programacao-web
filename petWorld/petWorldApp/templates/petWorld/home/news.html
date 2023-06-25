@@ -1,0 +1,53 @@
+{% load static %}
+
+{% block news %}
+<section class="news">
+    <div class="news-title">
+        <span>O QUE TEMOS DE NOVO? :3</span>
+    </div>
+    <div class="news-infos">
+        <div class="news-infos-info">
+            <div class="info-title">
+                <span>Acessórios</span>
+            </div>
+            <div class="info-body">
+                <div class="info-body-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                </div>
+                <div class="info-body-figure">
+                    <img src="{% static 'petWorld/figures/figure-5-gatohi.png' %}" alt="Figura de um cachorro fofinho fazendo continencia" 
+                        width="217" height="228" class="d-inline-block align-text-top">
+                </div>
+            </div>
+        </div>
+        <div class="news-infos-info">
+            <div class="info-title">
+                <span>Roupinhas</span>
+            </div>
+            <div class="info-body">
+                <div class="info-body-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                </div>
+                <div class="info-body-figure">
+                    <img src="{% static 'petWorld/figures/figure-4-gatolove.png' %}" alt="Figura de um cachorro fofinho mandando corações" 
+                        width="231" height="230" class="d-inline-block align-text-top">
+                </div>
+            </div>
+        </div>
+        <div class="news-infos-info">
+            <div class="info-title">
+                <span>Pelúcias</span>
+            </div>
+            <div class="info-body">
+                <div class="info-body-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                </div>
+                <div class="info-body-figure">
+                    <img src="{% static 'petWorld/figures/figure-3-gatomew.png' %}" alt="Figura de um cachorro fofinho miando" 
+                        width="199.67" height="230" class="d-inline-block align-text-top">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock news %}

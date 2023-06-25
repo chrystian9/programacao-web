@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title>Pet World</title>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="{% static 'petWorld/home/home.css' %}">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Itim'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+    <body>
+        {% include 'petWorld/base/header.html' %} 
+
+        {% block content %}{% endblock %}
+
+        {% include 'petWorld/base/footer.html' %} 
+    </body>
+</html>
