@@ -1,0 +1,23 @@
+.horizontal-menu {
+    display: flex;
+    padding: 20px 66px 9.24px 55.13px;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    height: 137px;
+    justify-content: space-between;
+}
+
+.horizontal-menu .navbar-options {
+    display: flex;
+    gap: 68px;
+    color: #646464;
+    padding-right: 330px;
+}
+
+.horizontal-menu .user-menu-options {
+    display: flex;
+    color: #646464;
+    gap: 57px;
+    align-items: center;
+}

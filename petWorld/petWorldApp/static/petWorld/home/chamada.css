@@ -1,0 +1,30 @@
+.website-call {
+    height: 904px;
+    background: #F6E4FF;
+    display: flex;
+}
+
+.website-call .website-call-body {
+    gap: 50px;
+    width: 1090px;
+    text-align: center;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.website-call .website-call-body .website-call-text {
+    width: 900px;
+}
+
+.website-call .figures .figure-top {
+    position: absolute;
+    left: 1304px;
+    top: 200px;
+}
+
+.website-call .figures .figure-down {
+    position: absolute;
+    left: 1159px;
+    top: 489px;
+}
