@@ -1,0 +1,58 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'petWorld/produtos/produtos.css' %}">
+
+{% block buy-section %}
+<section class="buy-section">
+    <div class="buy-section-body">
+        <div class="buy-section-filter">
+            <!-- <div class="filter-breadcrumbs">
+                <a class="breadcrumb" href="/">Home</a>
+                <a class="breadcrumb" href="/produtos">Produtos</a>
+            </div> -->
+
+            <div class="buy-section-select">
+                <label for="busca">Ordenar por</label>
+                <select class="busca-ordem" name="options" id="busca">
+                  <option>Selecionar</option>
+                  <option value="saab">Mais comprado</option>
+                  <option value="mercedes">Mais barato</option>
+                </select> 
+            </div>
+        </div>
+        <div class="buy-section-products">
+            <div class="search">
+                <div class="input-search">
+                    <input class="search-input" type="text">
+                </div>
+                <div class="options-search">
+                    <div class="option">
+                        <div class="name-option">Todos</div>
+                        <div class="number-option">{{ products.count }}</div>
+                    </div>
+                    
+                    {% for key, value in categories %}
+                    <div class="option">
+                        <div class="name-option">{{ key }}</div>
+                        <div class="number-option">{{ value }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="cards">
+                {% for product in products %}
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{% static 'petWorld/figures/racao-dog-1.png' %}" alt="Foto de um saco de ração"></img>
+                    </div>
+                    <div class="card-division"></div>
+                    <div class="card-info">
+                        <span class="product-name">Nome: {{ product.name }}</span>
+                        <span class="product-price">Preço: R$ {{ product.price }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock buy-section %}
