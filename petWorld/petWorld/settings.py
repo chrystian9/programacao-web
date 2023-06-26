@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'e_commerce_framework.apps.ECommerceFrameworkConfig',
     'petWorldApp.apps.PetworldappConfig',
     'django.contrib.admin',
     'django.contrib.auth',

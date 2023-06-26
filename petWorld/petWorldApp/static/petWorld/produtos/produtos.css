@@ -1,192 +1,33 @@
-body{
-    font-family: 'Itim' !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    font-size: 30px !important;
-    line-height: 36px !important;
-    width: 100%;
-}
-
-.horizontal-menu {
-    display: flex;
-    padding: 20px 66px 9.24px 55.13px;
-    align-items: center;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-    justify-content: space-between;
-    
-}
-
-.horizontal-menu .navbar-option {
-    display: inline;
-    padding-right: 30px;
-    font-size: 2.5rem;
-}
-
-.horizontal-menu .navbar-option > a {
-    color: #646464;
-}
-
-.horizontal-menu .user-menu-options {
-    display: flex;
-    color: #646464;
-    gap: 20%;
-    align-items: center;
-    margin-right: 3vw;
-}
-
-.website-call {
-    height: 100%;
-    background: #E4E6FF;
-    padding: 10vw;
+.products-call {
+    height: 601px;
+    background: #F6E4FF;
     display: flex;
 }
 
-.website-call-title > h1{
-    font-size: 3em;
-    color: #FFFFFF;
-    -webkit-text-stroke: 0.75px #000;
-}
-
-.website-call .website-call-body {
-    gap: 50px;
-    width: 1090px;
+.products-call-title {
+    color: #FFF;
     text-align: center;
-    display: grid;
-    align-content: center;
+    font-size: 200px;
+    font-family: Itim;
+}
+
+.products-call .products-call-body {
+    gap: 50px;
+    width: -webkit-fill-available;
+    text-align: center;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.website-call .website-call-body .website-call-text {
-    width: 100%;
+.products-call .products-call-body .products-call-text {
+    width: 900px;
 }
 
-.website-call .figures .figure-top {
+.products-call .figure .figure-top {
     position: absolute;
     left: 1304px;
     top: 200px;
-}
-
-.website-call .figures .figure-down {
-    position: absolute;
-    left: 1159px;
-    top: 489px;
-}
-
-.news {
-    padding: 167px 58px 257px 58px;
-    display: grid;
-    gap: 167px;
-}
-
-.news .news-title {
-    font-size: 54px;
-    line-height: 65px;
-    text-align: center;
-    color: #9878A4;
-}
-
-.news .news-infos {
-    display: flex;
-    gap: 58px;
-    justify-content: center;
-}
-
-.news .news-infos .news-infos-info {
-    display: grid;
-    background: #FFFFFF;
-    box-shadow: 0px 6px 13px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 21px;
-    width: 479px;
-    height: 696px;
-    align-content: start;
-}
-
-.news .news-infos .news-infos-info .info-title {
-    font-size: 48px;
-    line-height: 58px;
-    text-align: center;
-    color: rgba(103, 72, 100, 0.71);
-    padding: 55px 0px 53px 0px;
-}
-
-.news .news-infos .news-infos-info .info-body {
-    display: grid;
-}
-
-.news .news-infos .news-infos-info .info-body .info-body-text {
-    font-size: 32px;
-    line-height: 38px;
-    text-align: center;
-
-    color: #616161;
-}
-
-.news .news-infos .news-infos-info .info-body .info-body-figure {
-    text-align: center;
-}
-
-.footer-menu {
-    height: 100%;
-    background: #FFFFFF;
-    border-top: 1px solid #6C6C6C;
-    display: grid;
-    align-content: space-between;
-}
-
-.footer-menu .footer-menu-infos {
-    display: flex;
-    padding: 10vw 10vw 10vw 10vw;
-    justify-content: space-between;
-}
-
-.footer-menu .footer-menu-infos .logo {
-    display: grid;
-    color: #9F9F9F;
-    text-align: center;
-    margin-right: 5vw;
-    
-}
-
-.footer-menu .footer-menu-infos .footer-menu-info {
-    display: grid;
-    gap: 42px;
-    align-content: start;
-    padding: 2vw;
-}
-
-.footer-menu .footer-menu-infos .info-title {
-    font-size: 0.8em;
-    line-height: 34px;
-
-    color: #535353;
-}
-
-.footer-menu .footer-menu-infos .infos {
-    font-size: 28px;
-    line-height: 34px;
-    gap: 25px;
-    display: grid;
-    color: #9F9F9F;
-}
-
-.footer-menu .footer-menu-license {
-    height: 137px;
-    background: #EBEBEB;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-
-    color: #888888;
-}
-
-.footer-menu-infos .logo img {
-    width: 15vw;
 }
 
 .logo span{
@@ -209,11 +50,13 @@ svg{
     border-bottom:1px #898989 solid;
     padding-bottom: 10vh;
 }
+
 .filter-breadcrumbs{
     font-size: 2rem;
     text-decoration: none;
     align-items: flex-start;
 }
+
 .breadcrumb{
     color: #9F9F9F !important;
     background-color: transparent;
@@ -239,6 +82,7 @@ svg{
 .buy-section-products{
     display: flex;
     padding-top: 10vh;
+    gap: 84px;
 }
 
 .buy-section-products .search{
@@ -252,12 +96,14 @@ svg{
 .options-search{
     padding: 5vw 0 5vw 0;
 }
+
 .options-search .option{
     display: flex;
     justify-content: space-between;
     color: #898989;
     padding-bottom: 10px;
 }
+
 .search-input{
     width: 100%;
     border-radius: 45px;
@@ -265,4 +111,47 @@ svg{
     border:1px solid #898989;
     outline: none;
     margin: auto;
+}
+
+.cards {
+    display: flex;
+    column-gap: 99px;
+    row-gap: 84px;
+    width: 1173px;
+    flex-wrap: wrap;
+}
+
+.cards .card {
+    width: 325px;
+    height: 368px;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 17px;
+    
+    border-radius: 14px;
+    background: #FFF;
+    box-shadow: 0px 6px 20px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cards .card .card-image {
+    width: 197.868px;
+    height: 207px;
+}
+
+.cards .card .card-division {
+    width: 279.133px;
+    height: 1px;
+    background: #D2D2D2;
+}
+
+.cards .card .card-info {
+    display: flex;
+    width: 139.559px;
+    flex-direction: column;
+
+    color: #4E4E4E;
+    text-align: center;
+    font-size: 20px;
+    font-family: Inter;
 }
