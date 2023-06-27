@@ -1,27 +1,37 @@
 .products-call {
-    height: 601px;
-    background: #F6E4FF;
-    display: flex;
+    width: 100%;
+    background: #E4E6FF;
+    padding: 5vw 0 5vw 0;
 }
 
 .products-call-title {
     color: #FFF;
     text-align: center;
-    font-size: 200px;
     font-family: Itim;
+    font-size: 12rem;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .products-call .products-call-body {
     gap: 50px;
-    width: -webkit-fill-available;
     text-align: center;
     display: flex;
-    justify-content: center;
     align-items: center;
+    width: 70%;
+    margin: auto;
+    margin-right: 5vw;
+    
+}
+
+.figure .figure-image{
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
 }
 
 .products-call .products-call-body .products-call-text {
-    width: 900px;
+    width: 60%;
 }
 
 .products-call .figure .figure-top {
@@ -82,11 +92,11 @@ svg{
 .buy-section-products{
     display: flex;
     padding-top: 10vh;
-    gap: 84px;
+    gap: 2vw;
 }
 
 .buy-section-products .search{
-    width: 15%;
+    width: 20%;
 }
 
 .search{
@@ -107,7 +117,7 @@ svg{
 .search-input{
     width: 100%;
     border-radius: 45px;
-    padding: 5px;
+    padding: 3px;
     border:1px solid #898989;
     outline: none;
     margin: auto;
@@ -115,43 +125,51 @@ svg{
 
 .cards {
     display: flex;
-    column-gap: 99px;
+    column-gap: 50px;
     row-gap: 84px;
-    width: 1173px;
     flex-wrap: wrap;
+    margin-left: 2vw;
 }
 
 .cards .card {
-    width: 325px;
-    height: 368px;
+    padding: 1vw 3vw 1vw 3vw;
     display: grid;
     align-content: center;
     justify-items: center;
-    gap: 17px;
+    gap: 2vw;
     
     border-radius: 14px;
     background: #FFF;
     box-shadow: 0px 6px 20px 4px rgba(0, 0, 0, 0.25);
 }
 
-.cards .card .card-image {
-    width: 197.868px;
-    height: 207px;
+.cards .card .card-image img{
+    max-width: 150px;
+    max-height: 156.9px;
+    width: auto;
+    height: auto;
+    margin: auto;
 }
 
 .cards .card .card-division {
-    width: 279.133px;
+    width: 100%;
     height: 1px;
     background: #D2D2D2;
 }
 
 .cards .card .card-info {
     display: flex;
-    width: 139.559px;
     flex-direction: column;
 
+    width: 200px;
     color: #4E4E4E;
     text-align: center;
-    font-size: 20px;
+    font-size: 2rem;
     font-family: Inter;
+}
+
+@media (min-width: 1750px) {
+    .cards{
+        column-gap: 75px;
+    }
 }
