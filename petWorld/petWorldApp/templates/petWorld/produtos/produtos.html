@@ -1,0 +1,21 @@
+{% extends "../base/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'petWorld/home/chamada.css' + product_img %}">
+
+<section class="products-call">
+    <div class="products-call-body">
+        <div class="products-call-title">
+            <span>{{product_title}}</span>
+        </div>
+        <div class="figure">
+            <img src="{% static product_img %}" alt="{{product_img_alt}}" 
+                class="figure-image">
+        </div>
+    </div>
+</section>
+
+{% include './buy-section.html' %}
+
+{% endblock content %}

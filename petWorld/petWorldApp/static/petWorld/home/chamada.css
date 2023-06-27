@@ -1,0 +1,42 @@
+.website-call {
+    background: #F6E4FF;
+    padding: 5vw 0 5vw 0;
+    width: 100%;
+    
+}
+
+.website-call .website-call-body {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 80%;
+}
+
+.website-call .website-call-body .website-call-info{
+    margin: auto;
+    margin-top: 2vw;
+}
+
+.figures{
+    width: auto;
+    height: auto;
+}
+
+.figure-dog img{
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    
+}
+
+.dog-up{
+    margin-left: 7vw;
+}
+
+.website-call-text{
+    font-size: 3rem;
+    margin-top: 2vw;
+}
+

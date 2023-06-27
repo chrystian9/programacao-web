@@ -1,0 +1,33 @@
+{% extends "../base/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'petWorld/login/login.css' %}">
+
+<form class="login-form" method="post">
+    {% csrf_token %}
+
+    <div class="form-group input-login">
+        {{form_usuario.username.errors}}
+        <label>Username: </label>
+        {{form_usuario.username}}
+    </div>
+
+    <div class="form-group input-login">
+        {{form_usuario.password1.errors}}
+        <label>Senha: </label>
+        {{form_usuario.password1}}
+    </div>
+
+    <div class="form-group input-login">
+        {{form_usuario.password2.errors}}
+        <label>Confirmação de senha: </label>
+        {{form_usuario.password2}}
+    </div>
+
+    <div class="form-group submit-login">
+        <input type="submit" value="Cadastrar" class="submit-botao">
+    </div>
+</form>
+
+{% endblock content %}
