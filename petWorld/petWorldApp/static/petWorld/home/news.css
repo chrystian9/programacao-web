@@ -1,9 +1,9 @@
 .news {
-    padding: 167px 58px 257px 58px;
     display: grid;
-    gap: 167px;
+    width: 100%;
+    padding-top: 50px;
+   
 }
-
 .news .news-title {
     font-size: 54px;
     line-height: 65px;
@@ -13,8 +13,12 @@
 
 .news .news-infos {
     display: flex;
-    gap: 58px;
+    gap: 3vw;
     justify-content: center;
+    padding: 2vh 2vw 2vh 2vw;
+    width: 100%;
+    margin: auto;
+    padding: 50px;
 }
 
 .news .news-infos .news-infos-info {
@@ -22,17 +26,18 @@
     background: #FFFFFF;
     box-shadow: 0px 6px 13px 2px rgba(0, 0, 0, 0.25);
     border-radius: 21px;
-    width: 479px;
-    height: 696px;
-    align-content: start;
+    padding: 20px 20px 30px 20px;
+}
+.info-content{
+    width: 80%;
+    margin: auto;
 }
 
-.news .news-infos .news-infos-info .info-title {
-    font-size: 48px;
-    line-height: 58px;
+.news .news-infos .news-infos-info .info-content .info-title {
+    font-size: 2rem;
+    line-height: 1.5rem;
     text-align: center;
     color: rgba(103, 72, 100, 0.71);
-    padding: 55px 0px 53px 0px;
 }
 
 .news .news-infos .news-infos-info .info-body {
@@ -40,13 +45,18 @@
 }
 
 .news .news-infos .news-infos-info .info-body .info-body-text {
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 2rem;
     text-align: center;
-
     color: #616161;
 }
 
 .news .news-infos .news-infos-info .info-body .info-body-figure {
     text-align: center;
+}
+
+.cat-figure{
+    max-width: 150px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
 }
