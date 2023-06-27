@@ -1,4 +1,10 @@
+from decimal import Decimal
+from django.conf import settings
 from django.db import models
+
+from django.db.models.signals import pre_save, post_save, m2m_changed
+
+User = settings.AUTH_USER_MODEL
 
 class Category(models.Model):
     name = models.CharField(max_length=45, blank=False, null=False)
@@ -90,6 +96,7 @@ class Customer(models.Model):
     phone_number = models.CharField(max_length=12, blank=False, null=False)
     date_birth = models.DateField("date of birth", null=False, blank=False)
     address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null = True, blank = True)
     
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
@@ -114,3 +121,35 @@ class Order(models.Model):
     
     def __str__(self):
         return str(self.order_number)
+    
+class Cart(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null = True, blank = True)
+    products = models.ManyToManyField(Product,  blank = True)
+    subtotal = models.DecimalField(default = 0.00, max_digits=100, decimal_places = 2)
+    freight = models.DecimalField(default = 0.00, max_digits=100, decimal_places = 2)
+    total = models.DecimalField(default = 0.00, max_digits=100, decimal_places = 2)
+    updated = models.DateTimeField(auto_now = True)
+    timestamp = models.DateTimeField(auto_now_add = True)
+
+    def __str__(self):
+        return str(self.id)
+    
+def m2m_changed_cart_receiver(sender, instance, action, *args, **kwargs):
+  if action == 'post_add' or action == 'post_remove' or action == 'post_clear':
+    products = instance.products.all() 
+    total = 0 
+    for product in products: 
+      total += product.price 
+    if instance.subtotal != total:
+      instance.subtotal = total
+      instance.save()
+
+m2m_changed.connect(m2m_changed_cart_receiver, sender = Cart.products.through)
+
+def pre_save_cart_receiver(sender, instance, *args, **kwargs):
+    if instance.subtotal > 0:
+        instance.freight = Decimal(instance.subtotal) * Decimal(0.10) # considere o 10% como uma taxa de entrega
+    
+    instance.total = Decimal(instance.subtotal) + Decimal(instance.freight)
+
+pre_save.connect(pre_save_cart_receiver, sender = Cart)

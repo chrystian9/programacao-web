@@ -1,0 +1,50 @@
+{% extends "../base/base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'petWorld/carrinho/carrinho.css' %}">
+
+<div class="titulo-carrinho">
+    <span>MEU CARRINHO</span>
+</div>
+
+<div class="carrinho">
+    <div class="lista-produtos">        
+        <div class="cabecario-produtos">
+            <span style="margin-right: 300px;">PRODUTOS</span>
+            <!-- <span style="margin-right: 114px;">PREÇOS</span>
+            <span style="margin-right: 115px;">QUANTIDADE</span> -->
+            <!-- <span>TOTAL</span> -->
+        </div>
+        {% for produto in produtos %}
+        <div class="card-produto">
+            <div class="imagem-produto">
+                <img src="{% static 'petWorld/figures/racao-dog-1.png' %}" alt="Foto de um saco de ração"></img>
+            </div>
+            
+            <span style="width: 268px;">{{produto.name}}</span>
+            <span style="width: 182px;">R${{produto.price}}</span>
+            <!-- <span style="width: 266px;">3</span> -->
+            <!-- <span style="width: 182px;">R$00,00</span> -->
+        </div>
+        {% endfor %}
+    </div>
+    <div class="resumo-carrinho">
+        <div style="margin-bottom: 18px;" class="resumo-infos">
+            <span>Total dos produtos</span>
+            <span>R${{subtotal}}</span>
+        </div>
+        <div style="margin-bottom: 43px;" class="resumo-infos">
+            <span>Envio</span>
+            <span>R${{frete}}</span>
+        </div>
+        <div style="margin-bottom: 43px;" class="resumo-carrinho-division"></div>
+        <div style="margin-bottom: 43px;" class="resumo-infos">
+            <span>Total</span>
+            <span>R${{total}}</span>
+        </div>
+        <button class="botao-finalizar-pedido">Finalizar pedido</button>
+    </div>
+</div>
+
+{% endblock content %}

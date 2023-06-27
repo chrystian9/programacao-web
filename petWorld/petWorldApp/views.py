@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 
-from .models import Category, Product
+from .models import Cart, Category, Product
 
 # Create your views here.
 
@@ -59,10 +59,10 @@ def cadastrar_usuario(request):
         form_usuario = UserCreationForm(request.POST)
         if form_usuario.is_valid():
             form_usuario.save()
-            return redirect('/')
+            return redirect('/login')
     else:
         form_usuario = UserCreationForm()
-    return render(request, 'cadastro.html', {'form_usuario': form_usuario})
+    return render(request, 'petWorld/login/cadastro.html', {'form_usuario': form_usuario})
 
 def login_client(request):
     if request.method == "POST":
@@ -78,6 +78,23 @@ def login_client(request):
         form_login = AuthenticationForm()
     return render(request, "petWorld/login/login.html", {'form_login': form_login})
 
-def logout_request(request):
+def logout_client(request):
 	logout(request) 
 	return redirect("/")
+
+def carrinho(request):
+    if request.user.is_authenticated is False:
+            return redirect('/login')
+    
+    cart = Cart.objects.filter(user_id=request.user.id).first()
+    
+    context = {}
+    if cart is not None:
+        context = {
+            "produtos": cart.products.all(),
+            "subtotal": cart.subtotal,
+            "total": cart.total,
+            "frete": cart.freight
+        }
+    
+    return render(request, "petWorld/carrinho/carrinho.html", context)
