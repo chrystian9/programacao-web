@@ -11,8 +11,46 @@
 .horizontal-menu .navbar-options {
     display: flex;
     gap: 68px;
-    color: #646464;
     padding-right: 330px;
+}
+
+.horizontal-menu .navbar-options .nav-link {
+    cursor: pointer;
+    color: #646464 !important;
+}
+
+/* Style The Dropdown Button */
+
+/* The container <div> - needed to position the dropdown content */
+.horizontal-menu .navbar-options .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.horizontal-menu .navbar-options .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 0 0 25px 25px;
+}
+
+/* Links inside the dropdown */
+.horizontal-menu .navbar-options .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+/* Change color of dropdown links on hover */
+.horizontal-menu .navbar-options .dropdown-content a:hover {background-color: #f1f1f1}
+  
+/* Show the dropdown menu on hover */
+.horizontal-menu .navbar-options .dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .horizontal-menu .user-menu-options {
