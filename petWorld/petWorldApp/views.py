@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from django.shortcuts import render
 from django.shortcuts import render, redirect
@@ -88,13 +88,30 @@ def carrinho(request):
     
     cart = Cart.objects.filter(user_id=request.user.id).first()
     
-    context = {}
-    if cart is not None:
-        context = {
-            "produtos": cart.products.all(),
-            "subtotal": cart.subtotal,
-            "total": cart.total,
-            "frete": cart.freight
-        }
+    if cart is None:
+        cart = Cart.objects.create(user=request.user)
+
+    context = {
+        "produtos": cart.products.all(),
+        "subtotal": cart.subtotal,
+        "total": cart.total,
+        "frete": cart.freight
+    }
     
     return render(request, "petWorld/carrinho/carrinho.html", context)
+
+def adicionar_ao_carrinho(request, produto_id):
+    if request.user.is_authenticated is False:
+        return redirect('/login')
+
+    produto = Product.objects.get(pk=produto_id)
+
+    cart = Cart.objects.filter(user_id=request.user.id).first()
+
+    if cart is None:
+        cart = Cart.objects.create(user=request.user)
+    
+    cart.products.add(produto)
+    cart.save()
+
+    return redirect("/carrinho")
