@@ -1,6 +1,9 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
 
 from .models import Category, Product
 
@@ -23,7 +26,7 @@ product_imgs_alts = { "Dogs": "Figura de um cachorro segurando um disco com a bo
                 "Roedores": "Figura de um cachorro segurando um disco com a boca" }
 
 def home(request):
-    context = {"latest_question_list": ""}
+    context = {}
     return render(request, "petWorld/home/home.html", context)
 
 def produtos(request, product_type):
@@ -51,6 +54,30 @@ def produtos(request, product_type):
     }
     return render(request, "petWorld/produtos/produtos.html", context)
 
-def apresentacao(request):
-    context = {"latest_question_list": ""}
-    return render(request, "petWorld/home/apresentacao.html", context)
+def cadastrar_usuario(request):
+    if request.method == "POST":
+        form_usuario = UserCreationForm(request.POST)
+        if form_usuario.is_valid():
+            form_usuario.save()
+            return redirect('/')
+    else:
+        form_usuario = UserCreationForm()
+    return render(request, 'cadastro.html', {'form_usuario': form_usuario})
+
+def login_client(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        usuario = authenticate(request, username=username, password=password)
+        if usuario is not None:
+            login(request, usuario)
+            return redirect('/')
+        else:
+            form_login = AuthenticationForm()
+    else:
+        form_login = AuthenticationForm()
+    return render(request, "petWorld/login/login.html", {'form_login': form_login})
+
+def logout_request(request):
+	logout(request) 
+	return redirect("/")

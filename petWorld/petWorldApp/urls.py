@@ -6,4 +6,5 @@ app_name = "petWorld"
 urlpatterns = [
     path("", views.home, name="home'"),
     path("produtos/<str:product_type>/", views.produtos, name="produtos"),
+    path("login/", views.login_client, name="login"),
 ]
