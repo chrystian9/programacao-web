@@ -1,8 +1,11 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
 
-from .models import Category, Product
+from .models import Cart, Category, Product
 
 # Create your views here.
 
@@ -23,7 +26,7 @@ product_imgs_alts = { "Dogs": "Figura de um cachorro segurando um disco com a bo
                 "Roedores": "Figura de um cachorro segurando um disco com a boca" }
 
 def home(request):
-    context = {"latest_question_list": ""}
+    context = {}
     return render(request, "petWorld/home/home.html", context)
 
 def produtos(request, product_type):
@@ -51,6 +54,64 @@ def produtos(request, product_type):
     }
     return render(request, "petWorld/produtos/produtos.html", context)
 
-def apresentacao(request):
-    context = {"latest_question_list": ""}
-    return render(request, "petWorld/home/apresentacao.html", context)
+def cadastrar_usuario(request):
+    if request.method == "POST":
+        form_usuario = UserCreationForm(request.POST)
+        if form_usuario.is_valid():
+            form_usuario.save()
+            return redirect('/login')
+    else:
+        form_usuario = UserCreationForm()
+    return render(request, 'petWorld/login/cadastro.html', {'form_usuario': form_usuario})
+
+def login_client(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        usuario = authenticate(request, username=username, password=password)
+        if usuario is not None:
+            login(request, usuario)
+            return redirect('/')
+        else:
+            form_login = AuthenticationForm()
+    else:
+        form_login = AuthenticationForm()
+    return render(request, "petWorld/login/login.html", {'form_login': form_login})
+
+def logout_client(request):
+	logout(request) 
+	return redirect("/")
+
+def carrinho(request):
+    if request.user.is_authenticated is False:
+            return redirect('/login')
+    
+    cart = Cart.objects.filter(user_id=request.user.id).first()
+    
+    if cart is None:
+        cart = Cart.objects.create(user=request.user)
+
+    context = {
+        "produtos": cart.products.all(),
+        "subtotal": cart.subtotal,
+        "total": cart.total,
+        "frete": cart.freight
+    }
+    
+    return render(request, "petWorld/carrinho/carrinho.html", context)
+
+def adicionar_ao_carrinho(request, produto_id):
+    if request.user.is_authenticated is False:
+        return redirect('/login')
+
+    produto = Product.objects.get(pk=produto_id)
+
+    cart = Cart.objects.filter(user_id=request.user.id).first()
+
+    if cart is None:
+        cart = Cart.objects.create(user=request.user)
+    
+    cart.products.add(produto)
+    cart.save()
+
+    return redirect("/carrinho")

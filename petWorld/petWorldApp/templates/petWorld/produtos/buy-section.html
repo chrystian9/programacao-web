@@ -40,7 +40,7 @@
             </div>
             <div class="cards">
                 {% for product in products %}
-                <div class="card">
+                <div class="card" href="">
                     <div class="card-image">
                         <img src="{% static 'petWorld/figures/racao-dog-1.png' %}" alt="Foto de um saco de ração"></img>
                     </div>
@@ -49,6 +49,9 @@
                         <span class="product-name">Nome: {{ product.name }}</span>
                         <span class="product-price">Preço: R$ {{ product.price }}</span>
                     </div>
+                    <a href="{% url 'petWorldApp:adicionar_ao_carrinho' product.id %}">
+                        <button class="botao-adicionar-pedido" type="submit">Adicionar ao carrinho</button>
+                    </a>
                 </div>
                 {% endfor %}
             </div>
