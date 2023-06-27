@@ -15,15 +15,15 @@ product_titles = { "Dogs": "Catioros",
                   "Aves": "Aves", 
                   "Roedores": "Roedores" }
 product_img_names = { "Dogs": "figure-6-cartoon-dog.png", 
-                "Cats": "figure-6-cartoon-dog.png", 
-                "Peixes": "figure-6-cartoon-dog.png", 
-                "Aves": "figure-6-cartoon-dog.png", 
-                "Roedores": "figure-6-cartoon-dog.png" }
+                "Cats": "figure-7-gato.png", 
+                "Peixes": "figure-10-peixe.png", 
+                "Aves": "figure-8-passaros.png", 
+                "Roedores": "figure-9-roedores.png" }
 product_imgs_alts = { "Dogs": "Figura de um cachorro segurando um disco com a boca", 
-                "Cats": "Figura de um cachorro segurando um disco com a boca", 
-                "Peixes": "Figura de um cachorro segurando um disco com a boca", 
-                "Aves": "Figura de um cachorro segurando um disco com a boca", 
-                "Roedores": "Figura de um cachorro segurando um disco com a boca" }
+                "Cats": "Figura de um gato deitado", 
+                "Peixes": "Figura de um peixe", 
+                "Aves": "Figura de dois passaros", 
+                "Roedores": "Figura de dois hamisters" }
 
 def home(request):
     context = {}
