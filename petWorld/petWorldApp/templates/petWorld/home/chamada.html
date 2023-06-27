@@ -4,21 +4,21 @@
 {% block chamada %}
 <section class="website-call">
     <div class="website-call-body">
-        <div class="website-call-title">
-            <span>CHAMADA DO SITE</span>
+        <div class="website-call-info">
+            <div class="website-call-title">
+                <h2>CHAMADA DO SITE</h2>
+            </div>
+            <div class="website-call-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
         </div>
-        <div class="website-call-text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-    </div>
-    <div class="figures">
-        <div class="figure-top">
-            <img src="{% static 'petWorld/figures/figure-1-cute_shiba_inu.png' %}" alt="Figura de um cachorro fofinho sentado" 
-                width="300" height="300" class="d-inline-block align-text-top">
-        </div>
-        <div class="figure-down">
-            <img src="{% static 'petWorld/figures/figure-2-cute_shiba_inu.png' %}" alt="Figura de um cachorro fofinho deitado" 
-                width="300" height="300" class="d-inline-block align-text-top">
+         <div class="figures">
+            <div class="figure-dog">
+                <img class="dog-up"src="{% static 'petWorld/figures/figure-1-cute_shiba_inu.png' %}" alt="Figura de um cachorro fofinho sentado">
+            </div>
+            <div class="figure-dog">
+                <img class="dog-down"src="{% static 'petWorld/figures/figure-2-cute_shiba_inu.png' %}" alt="Figura de um cachorro fofinho deitado">
+            </div>
         </div>
     </div>
 </section>

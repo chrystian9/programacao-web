@@ -1,30 +1,42 @@
 .website-call {
-    height: 904px;
     background: #F6E4FF;
-    display: flex;
+    padding: 5vw 0 5vw 0;
+    width: 100%;
+    
 }
 
 .website-call .website-call-body {
-    gap: 50px;
-    width: 1090px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
     text-align: center;
-    display: grid;
-    align-content: center;
-    justify-content: center;
+    width: 80%;
 }
 
-.website-call .website-call-body .website-call-text {
-    width: 900px;
+.website-call .website-call-body .website-call-info{
+    margin: auto;
+    margin-top: 2vw;
 }
 
-.website-call .figures .figure-top {
-    position: absolute;
-    left: 1304px;
-    top: 200px;
+.figures{
+    width: auto;
+    height: auto;
 }
 
-.website-call .figures .figure-down {
-    position: absolute;
-    left: 1159px;
-    top: 489px;
+.figure-dog img{
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    
 }
+
+.dog-up{
+    margin-left: 7vw;
+}
+
+.website-call-text{
+    font-size: 3rem;
+    margin-top: 2vw;
+}
+
